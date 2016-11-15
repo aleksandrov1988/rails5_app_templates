@@ -138,7 +138,7 @@ insert_into_file 'config/application.rb', :before => /^\s*end\s*\n\s*end\s*\z/ d
   config.rack_cas.server_url='https://auth.mephi.ru'
   config.rack_cas.exclude_path='/api'
 
-  DATA
+  <<DATA
 end
 get_file 'config/initializers/session_store.rb'
 generate 'cas_session_store_migration'
