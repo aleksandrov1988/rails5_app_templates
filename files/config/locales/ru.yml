@@ -1,0 +1,22 @@
+ru:
+  app:
+    name: Название приложения
+    company:
+      short_name: НИЯУ МИФИ
+  helpers:
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …
+  activerecord:
+    errors:
+      messages:
+        required: не может быть пустым

@@ -1,0 +1,4 @@
+-if object.errors[attr].present?
+  %ul.list-unstyled.text-danger
+    -object.errors.delete(attr).each do |msg|
+      %li=msg

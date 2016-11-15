@@ -1,0 +1,55 @@
+a{
+  text-decoration: none;
+  &:hover, &:active, &:visited{
+    text-decoration: none;
+  }
+}
+label.required:after {
+  content: "*";
+  color: $brand-danger;
+}
+
+.has-error{
+  color: $state-danger-text;
+}
+
+.dashed{
+  border-bottom: 1px dashed;
+  &:hover, &:active{
+    text-decoration: none;
+  }
+}
+
+.navbar-brand{
+  .navbar-img{
+    display: inline;
+    margin-top: -8px;
+  }
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.navbar-nav{
+  line-height: 35px;
+  color: #fff;
+  .nav-item > a{
+    color: #fff;
+    text-decoration: none;
+    &:hover, &:active, &:visited{
+      color: #fff;
+      text-decoration: none;
+
+    }
+  }
+}
+
+.btn{
+  margin: .1rem;
+}
+
+.help-block{
+  color: $gray-light;
+}
+
+.text-white{
+  color: #fff;
+}

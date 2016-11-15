@@ -1,0 +1,80 @@
+
+
+$sidebar-width: 250px
+$sidebar-bg: #1d212a
+$sidebar-link-color: #b3b8c3
+$sidebar-link-color-hover: #fff
+
+#sidebar-toggle
+  float: left
+
+#wrapper
+  padding-left: 0
+  transition: all 0.5s ease
+  &.toggled
+    padding-left: $sidebar-width
+    #sidebar-wrapper
+      width: $sidebar-width
+
+    #page-content-wrapper
+      position: absolute
+      margin-right: -$sidebar-width
+
+
+#sidebar-wrapper
+  z-index: 1000
+  position: fixed
+  left: $sidebar-width
+  width: 0
+  height: 100%
+  margin-left: -$sidebar-width
+  overflow-y: auto
+  background-color: $sidebar-bg
+  transition: all 0.5s ease
+
+#page-content-wrapper
+  padding: 15px
+
+.sidebar-nav
+  position: absolute
+  top: 0
+  width: $sidebar-width
+  margin: 0
+  padding: 0
+  list-style: none
+  li
+    text-indent: 20px
+    line-height: 40px
+    a
+      transition: all 0.5s ease
+      display: block
+      text-decoration: none
+      color: $sidebar-link-color
+      &:hover, &:active, &:focus, &.active
+        text-decoration: none
+        background: rgba(0, 0, 0, 0.2)
+        color: $sidebar-link-color-hover
+  .sidebar-brand
+    height: 65px
+    font-size: 18px
+    line-height: 60px
+    font-family: 'Intro'
+    text-align: center
+
+    a
+      &:hover
+        color: #fff
+        background: none
+
+@media (min-width: $screen-md)
+  #wrapper
+    padding-left: $sidebar-width
+    &.toggled
+      padding-left: 0
+      #sidebar-wrapper
+        width: 0
+      #page-content-wrapper
+        position: relative
+        margin-right: 0
+  #sidebar-wrapper
+    width: $sidebar-width

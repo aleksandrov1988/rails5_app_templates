@@ -1,0 +1,16 @@
+
+%nav.navbar.navbar-dark.bg-primary.mb-2
+  .container
+    =button_tag fa_icon('bars'), type: 'button', class: 'text-white navbar-toggler hidden-sm-up', data: {toggle: 'collapse', target: '#navbar-collapse'}
+    .collapse.navbar-toggleable-xs#navbar-collapse
+      =link_to ?#, class: 'navbar-brand text-upcase' do
+        =image_tag 'mephi_logo_small_white.png', alt: t('app.name'), class: 'navbar-img'
+        =t('app.name')
+      -if @current_user
+        %ul.nav.navbar-nav.float-xs-right
+          %li.nav-item{title: @current_user.fio}=@current_user.login
+          %li.nav-item
+            =link_to '/logout' do
+              =fa_icon 'sign-out', class: 'fa-fw'
+      %ul.nav.navbar-nav
+        %li.nav-item=link_to fa_icon('home'), root_path        
