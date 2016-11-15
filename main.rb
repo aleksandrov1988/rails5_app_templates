@@ -145,7 +145,7 @@ generate 'cas_session_store_migration'
 
 
 get_file 'app/controllers/application_controller.rb'
-get_file 'app/controllers/application_helper.rb'
+get_file 'app/helpers/application_helper.rb'
 
 
 gem 'strip_attributes'
