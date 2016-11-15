@@ -66,6 +66,10 @@ gem_group :development do
   gem 'capistrano3-puma'
 end
 
+gem_source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 
 
 
