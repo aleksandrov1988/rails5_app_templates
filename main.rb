@@ -30,6 +30,8 @@ end
 gem 'rails-i18n'
 insert_into_file 'config/application.rb', after: /^\s*class\s+Application.+$/ do
   <<BASIC_APP_INSTALL
+
+
   config.i18n.default_locale = :ru
   config.eager_load_paths << Rails.root.join("lib")
   ActiveRecord::Base.belongs_to_required_by_default = true
@@ -66,9 +68,6 @@ end
 
 
 
-#routes
-generate('controller', 'welcome', 'index')
-route "root 'welcome#index'"
 
 #Twitter Bootstrap
 gem 'bootstrap'
@@ -76,8 +75,15 @@ gem 'bootstrap_form'
 gem 'ru_propisju'
 
 run 'bundle install'
+
+#routes
+generate('controller', 'welcome', 'index')
+route "root 'welcome#index'"
+
+
 insert_into_file 'app/assets/javascripts/application.js', before: /^\s*\/\/=\s*require_tree\s+\./ do
   <<APPJS
+
   //= require tether
   //= require bootstrap-sprockets
 
@@ -134,6 +140,8 @@ insert_into_file 'config/application.rb', "\nrequire 'rack-cas/session_store/act
 :after => /^\s*require\s*'rails\/all'\s*$/
 insert_into_file 'config/application.rb', :before => /^\s*end\s*\n\s*end\s*\z/ do
   <<DATA
+
+
   config.rack_cas.session_store = RackCAS::ActiveRecordStore
   config.rack_cas.server_url='https://auth.mephi.ru'
   config.rack_cas.exclude_path='/api'
