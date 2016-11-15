@@ -98,6 +98,7 @@ get_file 'app/assets/stylesheets/bootstrap-variables.scss'
 get_file 'app/assets/stylesheets/theme.scss'
 get_file 'app/assets/stylesheets/application.scss'
 get_file 'app/assets/stylesheets/main.scss'
+run 'rm app/assets/stylesheets/application.css'
 
 
 #Font Awesome
