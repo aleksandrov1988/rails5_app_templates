@@ -29,11 +29,11 @@ end
 
 gem 'rails-i18n'
 insert_into_file 'config/application.rb', after: /^\s*class\s+Application.+$/ do
-  <<-BASIC_APP_INSTALL
+  <<BASIC_APP_INSTALL
   config.i18n.default_locale = :ru
   config.eager_load_paths << Rails.root.join("lib")
   ActiveRecord::Base.belongs_to_required_by_default = true
-  BASIC_APP_INSTALL
+BASIC_APP_INSTALL
 end
 get_file 'config/locales/ru.yml'
 
@@ -77,11 +77,11 @@ gem 'ru_propisju'
 
 run 'bundle install'
 insert_into_file 'app/assets/javascripts/application.js', before: /^\s*\/\/=\s*require_tree\s+\./ do
-  <<-APPJS
+  <<APPJS
   //= require tether
   //= require bootstrap-sprockets
 
-  APPJS
+APPJS
 end
 
 get_file 'app/assets/stylesheets/bootstrap-variables.scss'
@@ -133,12 +133,12 @@ run 'bundle install'
 insert_into_file 'config/application.rb', "\nrequire 'rack-cas/session_store/active_record'\n",
 :after => /^\s*require\s*'rails\/all'\s*$/
 insert_into_file 'config/application.rb', :before => /^\s*end\s*\n\s*end\s*\z/ do
-  <<-DATA
+  <<DATA
   config.rack_cas.session_store = RackCAS::ActiveRecordStore
   config.rack_cas.server_url='https://auth.mephi.ru'
   config.rack_cas.exclude_path='/api'
 
-  <<DATA
+DATA
 end
 get_file 'config/initializers/session_store.rb'
 generate 'cas_session_store_migration'
